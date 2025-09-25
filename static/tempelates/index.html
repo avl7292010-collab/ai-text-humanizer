@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Humanizer Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-badge">
+                🎯 Professional AI Solution
+            </div>
+            <h1 class="header-title">AI Text Humanizer Pro</h1>
+            <p class="header-subtitle">Transform your content into professional, academic writing with advanced AI-powered text enhancement technology</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="nav-brand">AI Text Humanizer Pro</div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Features Section -->
+        <section class="features-section" id="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📝</div>
+                        <h3 class="feature-title">Smart Contraction Expansion</h3>
+                        <p class="feature-description">Intelligently converts informal contractions to formal academic language while preserving proper nouns and context.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3 class="feature-title">Academic Transitions</h3>
+                        <p class="feature-description">Enhances text flow with professional transitional phrases and academic connectors for improved readability.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3 class="feature-title">Advanced Transformations</h3>
+                        <p class="feature-description">Sophisticated passive voice conversion and intelligent synonym replacement for professional tone.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main App Section -->
+        <section class="app-section">
+            <div class="container">
+                <div class="app-grid">
+                    <!-- Input Section -->
+                    <div class="app-card">
+                        <div class="card-header">
+                            <h2 class="card-title">Text Input</h2>
+                            <p class="card-description">Enter your text below to begin the professional transformation process</p>
+                        </div>
+                        <div class="card-body">
+                            <textarea 
+                                id="inputText" 
+                                class="form-control" 
+                                placeholder="Paste your text here for professional enhancement..."
+                                rows="8"
+                            ></textarea>
+                            <button id="transformBtn" class="btn btn-primary">
+                                🚀 Transform Text
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Configuration Section -->
+                    <div class="config-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Configuration</h3>
+                            <p class="card-description">Customize your transformation settings</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <input type="checkbox" id="usePassive" class="form-checkbox">
+                                    <span class="checkbox-text">🔄 Passive Voice Conversion</span>
+                                </label>
+                                <small class="form-help">Convert active voice sentences to passive voice for formal tone</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <input type="checkbox" id="useSynonyms" class="form-checkbox">
+                                    <span class="checkbox-text">📚 Synonym Replacement</span>
+                                </label>
+                                <small class="form-help">Replace common words with sophisticated alternatives</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <input type="checkbox" id="preserveStructure" class="form-checkbox">
+                                    <span class="checkbox-text">📋 Preserve Structure</span>
+                                </label>
+                                <small class="form-help">Maintain original formatting and paragraph structure</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Transformation Intensity:</label>
+                                <select id="intensity" class="form-select">
+                                    <option value="light">Light</option>
+                                    <option value="medium" selected>Medium</option>
+                                    <option value="heavy">Heavy</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Output Style:</label>
+                                <select id="style" class="form-select">
+                                    <option value="academic" selected>Academic</option>
+                                    <option value="professional">Professional</option>
+                                    <option value="formal">Formal</option>
+                                </select>
+                            </div>
+
+                            <div class="quick-actions">
+                                <button id="loadSample" class="btn btn-secondary">📄 Load Sample</button>
+                                <button id="clearAll" class="btn btn-secondary">🗑️ Clear All</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Output Section -->
+                <div id="outputSection" class="output-section" style="display: none;">
+                    <div class="app-card">
+                        <div class="card-header">
+                            <h2 class="card-title">Transformed Output</h2>
+                            <p class="card-description">Your professionally enhanced text is ready</p>
+                        </div>
+                        <div class="card-body">
+                            <textarea 
+                                id="outputText" 
+                                class="form-control" 
+                                rows="10"
+                                readonly
+                            ></textarea>
+                            <button id="copyBtn" class="btn btn-success">
+                                📋 Copy to Clipboard
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Statistics -->
+                    <div class="stats-container">
+                        <h3 class="stats-title">📊 Transformation Statistics</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number" id="inputWords">0</div>
+                                <div class="stat-label">Input Words</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="inputSentences">0</div>
+                                <div class="stat-label">Input Sentences</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="outputWords">0</div>
+                                <div class="stat-label">Output Words</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="outputSentences">0</div>
+                                <div class="stat-label">Output Sentences</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works" id="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Input Your Text</h3>
+                        <p class="step-description">Paste any text that needs professional enhancement</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Configure Options</h3>
+                        <p class="step-description">Choose your transformation preferences and style</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Transform & Copy</h3>
+                        <p class="step-description">Get your enhanced text and copy it instantly</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <h2 class="section-title">About AI Text Humanizer Pro</h2>
+                <div class="about-content">
+                    <p class="about-text">
+                        AI Text Humanizer Pro is a powerful tool designed to transform your content into professional, 
+                        academic writing. Whether you're a student, researcher, or professional, our AI-powered 
+                        technology helps you create polished, formal text that meets the highest standards.
+                    </p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">✨</span>
+                            <span>Advanced AI-powered text transformation</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🎯</span>
+                            <span>Professional academic writing style</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🔄</span>
+                            <span>Multiple transformation options</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">📊</span>
+                            <span>Detailed transformation statistics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">AI Text Humanizer Pro</h3>
+            <p class="footer-description">Enterprise-grade AI text enhancement platform for professional content transformation</p>
+            <div class="footer-links">
+                <a href="#features" class="footer-link">Features</a>
+                <a href="#how-it-works" class="footer-link">How It Works</a>
+                <a href="#about" class="footer-link">About</a>
+            </div>
+            <p class="footer-copyright">© 2024 AI Text Humanizer Pro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Transforming your text...</p>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div id="successToast" class="toast toast-success" style="display: none;">
+        <span class="toast-icon">✅</span>
+        <span class="toast-message">Text copied to clipboard!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
